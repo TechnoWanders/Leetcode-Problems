@@ -1,0 +1,29 @@
+class Solution {
+public:
+    int minSteps(string str1, string str2) {
+    //leetcode 
+    //practise 
+    //main algorithm 
+    
+	map<char, int> m1;
+	int total =0;
+	for(int i =0 ; i<str1.length(); i++)
+	{
+		m1[str1[i]]++;
+	}
+	for(int i=0; i<str2.length(); i++)
+	{
+		if(m1[str2[i]]){
+			m1[str2[i]]--;
+		}
+	}
+	for(const auto& element : m1){
+		if(element.second>0){
+			total += element.second;
+		}
+	}
+
+	//cout<<endl<<total<<endl;
+	return total ;
+    }
+};
